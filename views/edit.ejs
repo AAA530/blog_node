@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %> 
+
+<div class="jumbotron text-center">
+    <h2>Edit blog : <%= blog.title %> </h2>
+</div>
+<div class="container">
+    <div class="form" style="width: 50%; margin: 0 auto; border: 1px solid black; border-radius: 50px;padding: 50px;">
+        <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" class="form-control" id="title" name="blog[title]" value="<%= blog.title %>">
+            </div>
+            <div class="form-group">
+                <label for="tag">tag</label>
+                <input type="text" class="form-control" id="tag" name="blog[tag]" value="<%= blog.tag %>">
+            </div>
+            <div class="form-group">
+                <label for="image">image</label>
+                <input type="text" class="form-control" id="image" name="blog[image]" value="<%= blog.image %>">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description</label>
+                <textarea class="form-control" name="blog[desc]" rows="5"><%= blog.desc %></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">submit</button>
+        </form>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %> 

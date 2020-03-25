@@ -1,0 +1,30 @@
+<%- include('partials/header'); %>
+
+<div class="container" style="width: 60%; background-color: rgb(238, 237, 237); border-radius: 20px; margin-top: 20px;">
+    <h1 class="text-center">
+    <%= blog.title %>
+    </h1>
+    <img src="<%= blog.image %>" style="width: 100%;">
+    <div class="caption">
+        <div class="text-center" style="border-bottom: 1px solid black; font-size: 30px;">
+            <%= blog.tag %> 
+        </div>
+        
+        <div style="font-size: 20px;border-bottom: 1px solid black;">
+            <%= blog.desc %> 
+        </div>
+    </div>
+
+    <div style="width: 30%;margin: 0 auto; margin-top: 20px;">
+        <a class="btn btn-primary btn-block" href="/blogs/<%= blog._id %>/edit ">
+            Edit Blog
+        </a>
+    </div>
+    <div style="width: 30%;margin: 0 auto; margin-top: 20px;">
+        <form  action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-primary btn-block">Delete blog</button>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer'); %>

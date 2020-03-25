@@ -1,0 +1,25 @@
+<%- include('partials/header'); %>
+
+<div class="jumbotron">
+    <h1 class="text-center">Blogs</h1>
+    <div style="width: 20%;margin: 20px auto;">
+        <a href="blogs/new" class="btn btn-primary btn-block">Add new blog</a>
+    </div>
+</div>
+
+<div class="container" style="width: 50%;">
+    
+<% blog.forEach(element => { %>
+    <div style="border: 1px solid black; margin-top: 20px; border-radius: 20px;padding-bottom: 20px;">
+        <h1 class="text-center"><%= element.title %> </h1>
+        <img class="img-fluid" style="border-radius: 5px;width: 100%;" src="<%= element.image %>"></img>
+        <div class="caption" style="margin-top: 15px;">
+            <%- element.tag %>
+        </div>
+        <a class="btn btn-primary btn-block" style="margin-top: 10px;" href="blogs/<%= element._id %> ">Read more</a>
+    </div>
+<% }); %> 
+
+</div>
+
+<%- include('partials/footer'); %>

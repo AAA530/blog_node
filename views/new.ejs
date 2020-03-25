@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %> 
+
+<div class="jumbotron text-center">
+    <h2>Enter new blog</h2>
+</div>
+<div class="container">
+    <div class="form" style="width: 50%; margin: 0 auto; border: 1px solid black; border-radius: 50px;padding: 50px;">
+        <form action="/blogs" method="POST">
+            <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="tag">tag</label>
+                <input type="text" class="form-control" id="tag" name="tag">
+            </div>
+            <div class="form-group">
+                <label for="image">image</label>
+                <input type="text" class="form-control" id="image" name="image">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description</label>
+                <textarea class="form-control" name="desc" rows="5"></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">submit</button>
+        </form>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %> 
